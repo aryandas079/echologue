@@ -336,10 +336,7 @@
             generateBtn.classList.add('animate-pulse');
             generateBtn.disabled = true;
 
-            // Simulated matching sound logic
-            setTimeout(() => {
-                window.location.href = 'sound.html';
-            }, 1200);
+            document.getElementById('early-modal').classList.remove('hidden');
         });
 
         // Press Enter to Generate
@@ -348,37 +345,87 @@
         });
     </script>
     <script>
-        const words = [
-            "sound",
-            "feel",
-            "echo",
-            "hum",
-            "whisper",
-            "resonate",
-            "pulse",
-            "sing",
-            "vibrate",
-            "breathe"
-        ];
+            const words = [
+                "sound",
+                "feel",
+                "echo",
+                "hum",
+                "whisper",
+                "resonate",
+                "pulse",
+                "sing",
+                "vibrate",
+                "breathe"
+            ];
 
-        const wordSpan = document.getElementById("changing-word");
+            const wordSpan = document.getElementById("changing-word");
 
-        let index = 0;
-        let canChange = true;
+            let index = 0;
+            let canChange = true;
 
-        document.addEventListener("mousemove", () => {
-            if (!canChange) return;
+            document.addEventListener("mousemove", () => {
+                if (!canChange) return;
 
-            canChange = false;
-            index = (index + 1) % words.length;
-            wordSpan.textContent = words[index];
+                canChange = false;
+                index = (index + 1) % words.length;
+                wordSpan.textContent = words[index];
 
-            // pause before allowing next change
-            setTimeout(() => {
-                canChange = true;
-            }, 500); // adjust pause time here
-        });
+                // pause before allowing next change
+                setTimeout(() => {
+                    canChange = true;
+                }, 500); // adjust pause time here
+            });
     </script>
+    <!-- Early Access Modal -->
+    <div id="early-modal"
+        class="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 hidden">
+
+        <div
+            class="max-w-md w-[90%] bg-[#020617]/90 border border-white/10 rounded-3xl p-8 text-center shadow-2xl animate-fade-in">
+
+            <h2 class="text-2xl font-light tracking-wide mb-4 text-orange-400">
+                Early Phase
+            </h2>
+
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                This feature is in an early development phase. The core research and learning-model
+                design are underway, but sound generation isn’t live yet due to current resource
+                constraints.
+                <br><br>
+                You’re seeing the blueprint — the sound comes next.
+            </p>
+
+            <button id="close-modal"
+                class="mt-2 px-8 py-3 rounded-full bg-white/10 hover:bg-white/20 transition font-semibold tracking-wide">
+                Got it
+            </button>
+        </div>
+    </div>
+
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.96);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.25s ease-out forwards;
+        }
+    </style>
+    <script>
+            document.getElementById('close-modal').addEventListener('click', () => {
+                document.getElementById('early-modal').classList.add('hidden');
+            });
+    </script>
+
+
 
 
 </body>
