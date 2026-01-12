@@ -206,6 +206,11 @@
 
             <!-- Controls Group -->
             <div class="flex items-center gap-2 w-full md:w-auto px-4">
+                <!-- Random Button -->
+                <button id="random-btn" title="Randomize Prompt" class="text-slate-500 hover:text-orange-400 transition-colors p-2">
+                    <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
+                </button>
+
                 <!-- Genre Selector -->
                 <select id="genre"
                     class="bg-transparent text-sm border-none focus:ring-0 cursor-pointer py-3 px-4 text-slate-300 hover:text-white transition-colors font-medium">
@@ -263,9 +268,34 @@
 
     <script>
         const micBtn = document.getElementById('mic-btn');
+        const randomBtn = document.getElementById('random-btn');
         const promptInput = document.getElementById('prompt-input');
         const generateBtn = document.getElementById('generate-btn');
         const statusMsg = document.getElementById('status-msg');
+
+        // Random Logic
+        const randomPrompts = [
+            "Rain hitting a neon-lit window in Tokyo",
+            "A lonely astronaut looking at Earth from the moon",
+            "Midnight jazz in a smoke-filled underground club",
+            "The feeling of waking up in a field of flowers",
+            "Driving through a desert at sunset with the top down",
+            "A cyberpunk market busy with neon signs and steam",
+            "Walking through an ancient, mystical forest at dawn",
+            "Techno rhythms echoing in an abandoned warehouse",
+            "The warmth of a vinyl record playing on a Sunday afternoon"
+        ];
+        const genres = ["rap", "rock", "pop", "jazz", "lofi", "electronic", "classical"];
+        const moods = ["calm", "ambience", "electric", "dark", "happy", "aggressive", "ethereal"];
+
+        randomBtn.addEventListener('click', () => {
+            promptInput.value = randomPrompts[Math.floor(Math.random() * randomPrompts.length)];
+            document.getElementById('genre').value = genres[Math.floor(Math.random() * genres.length)];
+            document.getElementById('mood').value = moods[Math.floor(Math.random() * moods.length)];
+            
+            promptInput.classList.add('animate-pulse');
+            setTimeout(() => promptInput.classList.remove('animate-pulse'), 500);
+        });
 
         // Speech Recognition Setup
         let recognition;
@@ -336,7 +366,12 @@
             generateBtn.classList.add('animate-pulse');
             generateBtn.disabled = true;
 
-            document.getElementById('early-modal').classList.remove('hidden');
+            setTimeout(() => {
+                generateBtn.innerText = "Generate Sound";
+                generateBtn.classList.remove('animate-pulse');
+                generateBtn.disabled = false;
+                document.getElementById('early-modal').classList.remove('hidden');
+            }, 800);
         });
 
         // Press Enter to Generate
@@ -424,10 +459,6 @@
                 document.getElementById('early-modal').classList.add('hidden');
             });
     </script>
-
-
-
-
 </body>
 
 </html>
