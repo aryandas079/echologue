@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ECHOLOGUE | AryanDAS</title>
-    
+    <title>ECHOLOGUE | Pre-Release</title>
+
     <!-- Custom "E" Favicon -->
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='black'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='900' font-size='75' fill='white'%3EE%3C/text%3E%3C/svg%3E">
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='black'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='900' font-size='75' fill='white'%3EE%3C/text%3E%3C/svg%3E">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,7 +16,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
-        
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: #0a0510;
@@ -26,8 +28,15 @@
         }
 
         @keyframes fade-in {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .animate-fade-in {
@@ -61,21 +70,44 @@
             background: #f43f5e;
             animation: equalize 1s infinite alternate;
         }
-        .bar:nth-child(2) { animation-delay: 0.2s; }
-        .bar:nth-child(3) { animation-delay: 0.4s; }
 
-        @keyframes equalize {
-            from { height: 3px; }
-            to { height: 12px; }
+        .bar:nth-child(2) {
+            animation-delay: 0.2s;
         }
 
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #0a0510; }
-        ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 10px; }
-        
-        .modal-content-scroll::-webkit-scrollbar { width: 4px; }
+        .bar:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes equalize {
+            from {
+                height: 3px;
+            }
+
+            to {
+                height: 12px;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0510;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #2a2a2a;
+            border-radius: 10px;
+        }
+
+        .modal-content-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
     </style>
 </head>
+
 <body class="text-white selection:bg-rose-500/30 overflow-x-hidden">
 
     <!-- Background Audio -->
@@ -85,9 +117,14 @@
 
     <!-- Global Background Elements -->
     <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div class="absolute top-[-10%] left-[-10%] w-[60%] md:w-[40%] h-[40%] bg-amber-600/20 blur-[120px] rounded-full animate-pulse"></div>
-        <div class="absolute bottom-[-10%] right-[-10%] w-[70%] md:w-[50%] h-[50%] bg-purple-900/30 blur-[140px] rounded-full"></div>
-        <div class="absolute top-[20%] right-[10%] w-[50%] md:w-[30%] h-[30%] bg-rose-600/10 blur-[100px] rounded-full"></div>
+        <div
+            class="absolute top-[-10%] left-[-10%] w-[60%] md:w-[40%] h-[40%] bg-amber-600/20 blur-[120px] rounded-full animate-pulse">
+        </div>
+        <div
+            class="absolute bottom-[-10%] right-[-10%] w-[70%] md:w-[50%] h-[50%] bg-purple-900/30 blur-[140px] rounded-full">
+        </div>
+        <div class="absolute top-[20%] right-[10%] w-[50%] md:w-[30%] h-[30%] bg-rose-600/10 blur-[100px] rounded-full">
+        </div>
         <div class="absolute inset-0 bg-noise opacity-[0.15]"></div>
     </div>
 
@@ -96,18 +133,23 @@
         <div class="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between">
             <!-- Brand -->
             <button onclick="window.location.reload()" class="group flex items-center gap-2 md:gap-4 outline-none">
-                <div class="w-8 h-8 md:w-10 md:h-10 bg-black border border-white/10 rounded-lg flex items-center justify-center font-black text-white text-lg md:text-xl shadow-lg transition-transform group-hover:scale-105 uppercase">E</div>
+                <div
+                    class="w-8 h-8 md:w-10 md:h-10 bg-black border border-white/10 rounded-lg flex items-center justify-center font-black text-white text-lg md:text-xl shadow-lg transition-transform group-hover:scale-105 uppercase">
+                    E</div>
                 <div class="leading-tight text-left">
-                    <h1 class="text-lg md:text-2xl font-bold tracking-tighter bg-gradient-to-r from-white to-neutral-400 bg-clip-text text-transparent group-hover:from-rose-400 group-hover:to-amber-400 transition-all uppercase">
+                    <h1
+                        class="text-lg md:text-2xl font-bold tracking-tighter bg-gradient-to-r from-white to-neutral-400 bg-clip-text text-transparent group-hover:from-rose-400 group-hover:to-amber-400 transition-all uppercase">
                         ECHOLOGUE
                     </h1>
                 </div>
             </button>
-            
+
             <!-- Desktop Navigation -->
             <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-neutral-400">
-                <button onclick="window.open('relax.html', '_self')" class="hover:text-white transition uppercase tracking-widest text-[10px] font-bold">Relax</button>
-                <button onclick="toggleModal('developerModal')" class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 hover:border-white/30 hover:bg-white/5 hover:text-white transition group text-[10px] uppercase font-bold tracking-tight">
+                <button onclick="window.open('relax.html', '_self')"
+                    class="hover:text-white transition uppercase tracking-widest text-[10px] font-bold">Relax</button>
+                <button onclick="toggleModal('developerModal')"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 hover:border-white/30 hover:bg-white/5 hover:text-white transition group text-[10px] uppercase font-bold tracking-tight">
                     <i data-lucide="user" class="w-3.5 h-3.5"></i>
                     <span>Know the Developer</span>
                 </button>
@@ -116,7 +158,8 @@
             <!-- Right Controls -->
             <div class="flex items-center gap-3 md:gap-6">
                 <!-- Functional Audio Toggle Pill (No Speaker Icon) -->
-                <button id="audioToggle" class="hidden md:flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-widest text-neutral-400 transition-all hover:bg-white/10 w-[140px] justify-center group shadow-xl">
+                <button id="audioToggle"
+                    class="hidden md:flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-widest text-neutral-400 transition-all hover:bg-white/10 w-[140px] justify-center group shadow-xl">
                     <div class="w-6 flex items-center justify-center flex-shrink-0">
                         <div id="visualizer" class="hidden flex items-end gap-0.5 h-3.5">
                             <div class="bar"></div>
@@ -127,10 +170,13 @@
                     </div>
                     <span id="audioStatus" class="w-18 text-left">Sound Off</span>
                 </button>
-                
+
                 <div class="flex items-center gap-2 md:gap-4">
-                    <button onclick="window.open('signin.html', '_self')" class="text-[9px] md:text-[10px] font-black hover:text-rose-400 transition uppercase tracking-widest text-neutral-400">Sign in</button>
-                    <button onclick="window.open('signup.html', '_self')" class="px-3 md:px-5 py-1.5 md:py-2 rounded-full bg-white text-black text-[9px] md:text-[10px] font-black hover:bg-rose-100 hover:scale-105 active:scale-95 transition-all shadow-lg uppercase tracking-widest">
+                    <button onclick="window.open('signin.html', '_self')"
+                        class="text-[9px] md:text-[10px] font-black hover:text-rose-400 transition uppercase tracking-widest text-neutral-400">Sign
+                        in</button>
+                    <button onclick="window.open('signup.html', '_self')"
+                        class="px-3 md:px-5 py-1.5 md:py-2 rounded-full bg-white text-black text-[9px] md:text-[10px] font-black hover:bg-rose-100 hover:scale-105 active:scale-95 transition-all shadow-lg uppercase tracking-widest">
                         Get Started
                     </button>
                 </div>
@@ -141,29 +187,36 @@
     <!-- HERO SECTION -->
     <main class="relative z-10 pt-32 md:pt-44 pb-12 md:pb-20 px-4 md:px-6">
         <div class="max-w-4xl mx-auto text-center">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] md:text-xs font-medium text-rose-300 mb-6 md:mb-8 animate-fade-in uppercase tracking-wider">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] md:text-xs font-medium text-rose-300 mb-6 md:mb-8 animate-fade-in uppercase tracking-wider">
                 <i data-lucide="shield-check" class="w-3 md:w-3.5 h-3 md:h-3.5"></i>
                 <span>Private Beta Testing Phase</span>
             </div>
 
-            <h2 class="text-3xl md:text-8xl font-bold leading-[1.1] tracking-tight mb-6 md:mb-8 uppercase text-white px-2">
-                Hear what your <span id="thoughts-text" class="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-amber-400 to-purple-400 inline-block transition-all duration-700">thoughts</span> sound like.
+            <h2
+                class="text-3xl md:text-8xl font-bold leading-[1.1] tracking-tight mb-6 md:mb-8 uppercase text-white px-2">
+                Hear what your <span id="thoughts-text"
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-amber-400 to-purple-400 inline-block transition-all duration-700">thoughts</span>
+                sound like.
             </h2>
-            
-            <p class="text-sm md:text-xl text-neutral-400 max-w-2xl mx-auto mb-8 md:mb-12 leading-relaxed animate-fade-in px-4" style="animation-delay: 0.1s">
-                An experimental AI landscape designed to convert human emotion into immersive harmonic stems. Join the limited early access program.
+
+            <p class="text-sm md:text-xl text-neutral-400 max-w-2xl mx-auto mb-8 md:mb-12 leading-relaxed animate-fade-in px-4"
+                style="animation-delay: 0.1s">
+                An experimental AI landscape designed to convert human emotion into immersive harmonic stems. Join the
+                limited early access program.
             </p>
 
             <!-- Prompt Bar -->
             <div class="relative group max-w-2xl mx-auto animate-fade-in px-2" style="animation-delay: 0.2s">
-                <div class="absolute -inset-1 bg-gradient-to-r from-rose-500 to-purple-600 rounded-2xl blur opacity-20 group-focus-within:opacity-40 transition duration-1000"></div>
-                <div class="relative bg-[#120c18] border border-white/10 rounded-xl md:rounded-2xl flex items-center p-1.5 md:p-2 pl-4 md:pl-6 shadow-2xl">
-                    <input
-                        type="text"
-                        placeholder="Describe a mood..."
-                        class="flex-1 bg-transparent border-none outline-none text-sm md:text-lg text-white placeholder-white/20 min-w-0"
-                    >
-                    <button onclick="window.open('signup.html', '_self')" class="flex items-center gap-2 px-4 md:px-6 py-2 md:py-3 rounded-lg md:rounded-xl bg-gradient-to-r from-rose-500 to-amber-500 text-white font-black uppercase tracking-widest shadow-lg active:scale-95 text-[10px] md:text-base transition-all">
+                <div
+                    class="absolute -inset-1 bg-gradient-to-r from-rose-500 to-purple-600 rounded-2xl blur opacity-20 group-focus-within:opacity-40 transition duration-1000">
+                </div>
+                <div
+                    class="relative bg-[#120c18] border border-white/10 rounded-xl md:rounded-2xl flex items-center p-1.5 md:p-2 pl-4 md:pl-6 shadow-2xl">
+                    <input type="text" placeholder="Describe a mood..."
+                        class="flex-1 bg-transparent border-none outline-none text-sm md:text-lg text-white placeholder-white/20 min-w-0">
+                    <button onclick="window.open('signup.html', '_self')"
+                        class="flex items-center gap-2 px-4 md:px-6 py-2 md:py-3 rounded-lg md:rounded-xl bg-gradient-to-r from-rose-500 to-amber-500 text-white font-black uppercase tracking-widest shadow-lg active:scale-95 text-[10px] md:text-base transition-all">
                         <i data-lucide="zap" class="w-3.5 md:w-4 h-3.5 md:h-4"></i>
                         <span class="whitespace-nowrap">Early Access</span>
                     </button>
@@ -171,60 +224,79 @@
             </div>
 
             <!-- Stats -->
-            <div class="mt-16 md:mt-24 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 border-t border-white/5 pt-8 md:pt-12 animate-fade-in" style="animation-delay: 0.3s">
+            <div class="mt-16 md:mt-24 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 border-t border-white/5 pt-8 md:pt-12 animate-fade-in"
+                style="animation-delay: 0.3s">
                 <div class="text-center">
                     <p class="text-lg md:text-2xl font-bold text-white uppercase">V0.1.2</p>
-                    <p class="text-[8px] md:text-[10px] text-neutral-500 uppercase tracking-widest mt-1">Build Version</p>
+                    <p class="text-[8px] md:text-[10px] text-neutral-500 uppercase tracking-widest mt-1">Build Version
+                    </p>
                 </div>
                 <div class="text-center">
                     <p class="text-lg md:text-2xl font-bold text-white uppercase">842</p>
-                    <p class="text-[8px] md:text-[10px] text-neutral-500 uppercase tracking-widest mt-1">Waitlist Users</p>
+                    <p class="text-[8px] md:text-[10px] text-neutral-500 uppercase tracking-widest mt-1">Waitlist Users
+                    </p>
                 </div>
                 <div class="text-center">
                     <p class="text-lg md:text-2xl font-bold text-white uppercase">99.9%</p>
-                    <p class="text-[8px] md:text-[10px] text-neutral-500 uppercase tracking-widest mt-1">Target Uptime</p>
+                    <p class="text-[8px] md:text-[10px] text-neutral-500 uppercase tracking-widest mt-1">Target Uptime
+                    </p>
                 </div>
                 <div class="text-center">
                     <p class="text-lg md:text-2xl font-bold text-white uppercase">Global</p>
-                    <p class="text-[8px] md:text-[10px] text-neutral-500 uppercase tracking-widest mt-1">Availability</p>
+                    <p class="text-[8px] md:text-[10px] text-neutral-500 uppercase tracking-widest mt-1">Availability
+                    </p>
                 </div>
             </div>
         </div>
     </main>
 
     <!-- MOBILE QUICK NAV -->
-    <div class="lg:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 px-4 py-3 rounded-2xl glass-nav border border-white/10 shadow-2xl">
-        <button onclick="window.open('relax.html', '_self')" class="px-4 py-2 rounded-xl bg-white/5 text-[9px] font-black uppercase tracking-widest">Relax</button>
-        <button onclick="toggleModal('developerModal')" class="px-4 py-2 rounded-xl bg-white/10 text-[9px] font-black uppercase tracking-widest border border-white/10">Developer</button>
+    <div
+        class="lg:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 px-4 py-3 rounded-2xl glass-nav border border-white/10 shadow-2xl">
+        <button onclick="window.open('relax.html', '_self')"
+            class="px-4 py-2 rounded-xl bg-white/5 text-[9px] font-black uppercase tracking-widest">Relax</button>
+        <button onclick="toggleModal('developerModal')"
+            class="px-4 py-2 rounded-xl bg-white/10 text-[9px] font-black uppercase tracking-widest border border-white/10">Developer</button>
     </div>
 
     <!-- HIGHLIGHTS -->
     <section class="py-16 md:py-24 px-4 md:px-6 bg-white/[0.02] relative z-10 border-t border-white/5">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-3 gap-6 md:gap-8 text-white">
-                <div class="p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] glass-card hover:border-rose-500/30 transition-all duration-500 group relative overflow-hidden">
+                <div
+                    class="p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] glass-card hover:border-rose-500/30 transition-all duration-500 group relative overflow-hidden">
                     <div class="absolute -bottom-12 -right-12 w-32 h-32 bg-rose-500/5 blur-[40px] rounded-full"></div>
-                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 md:mb-8 group-hover:scale-110">
+                    <div
+                        class="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 md:mb-8 group-hover:scale-110">
                         <i data-lucide="zap" class="w-5 md:w-6 h-5 md:h-6 text-amber-400"></i>
                     </div>
-                    <h4 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 uppercase tracking-tighter">Instant Translation</h4>
-                    <p class="text-neutral-400 leading-relaxed text-xs md:text-sm">Our neural network processes natural language into complex harmonic structures in real-time. Just describe the feeling.</p>
+                    <h4 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 uppercase tracking-tighter">Instant
+                        Translation</h4>
+                    <p class="text-neutral-400 leading-relaxed text-xs md:text-sm">Our neural network processes natural
+                        language into complex harmonic structures in real-time. Just describe the feeling.</p>
                 </div>
-                <div class="p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] glass-card hover:border-purple-500/30 transition-all duration-500 group relative overflow-hidden">
+                <div
+                    class="p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] glass-card hover:border-purple-500/30 transition-all duration-500 group relative overflow-hidden">
                     <div class="absolute -bottom-12 -right-12 w-32 h-32 bg-purple-500/5 blur-[40px] rounded-full"></div>
-                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 md:mb-8 group-hover:scale-110">
+                    <div
+                        class="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 md:mb-8 group-hover:scale-110">
                         <i data-lucide="layers" class="w-5 md:w-6 h-5 md:h-6 text-rose-400"></i>
                     </div>
-                    <h4 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 uppercase tracking-tighter">Multi-Layer Depth</h4>
-                    <p class="text-neutral-400 leading-relaxed text-xs md:text-sm">Every track is composed of unique stems: ambient pads, rhythmic textures, and melodic leads that shift as you listen.</p>
+                    <h4 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 uppercase tracking-tighter">Multi-Layer Depth
+                    </h4>
+                    <p class="text-neutral-400 leading-relaxed text-xs md:text-sm">Every track is composed of unique
+                        stems: ambient pads, rhythmic textures, and melodic leads that shift as you listen.</p>
                 </div>
-                <div class="p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] glass-card hover:border-amber-500/30 transition-all duration-500 group relative overflow-hidden">
+                <div
+                    class="p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] glass-card hover:border-amber-500/30 transition-all duration-500 group relative overflow-hidden">
                     <div class="absolute -bottom-12 -right-12 w-32 h-32 bg-amber-500/5 blur-[40px] rounded-full"></div>
-                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 md:mb-8 group-hover:scale-110">
+                    <div
+                        class="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 md:mb-8 group-hover:scale-110">
                         <i data-lucide="disc" class="w-5 md:w-6 h-5 md:h-6 text-purple-400"></i>
                     </div>
                     <h4 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 uppercase tracking-tighter">Royalty Free</h4>
-                    <p class="text-neutral-400 leading-relaxed text-xs md:text-sm">Everything you create is yours. Export high-fidelity files for your projects or personal peace without limits.</p>
+                    <p class="text-neutral-400 leading-relaxed text-xs md:text-sm">Everything you create is yours.
+                        Export high-fidelity files for your projects or personal peace without limits.</p>
                 </div>
             </div>
         </div>
@@ -232,12 +304,17 @@
 
     <!-- FOOTER -->
     <footer class="relative z-10 py-12 px-6 border-t border-white/5 bg-[#0a0510] pb-24 md:pb-12">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left text-white">
-            <div><h3 class="text-lg font-bold tracking-tighter uppercase">ECHOLOGUE</h3></div>
+        <div
+            class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left text-white">
+            <div>
+                <h3 class="text-lg font-bold tracking-tighter uppercase">ECHOLOGUE</h3>
+            </div>
             <div class="flex gap-6 text-[10px] font-bold text-neutral-400">
                 <!-- MODIFIED: Now opens in a new window instead of modal -->
-                <button onclick="window.open('terms.html', '_blank')" class="hover:text-white transition uppercase tracking-widest">Terms</button>
-                <button onclick="window.open('privacy.html', '_blank')" class="hover:text-white transition uppercase tracking-widest">Privacy</button>
+                <button onclick="window.open('terms.html', '_blank')"
+                    class="hover:text-white transition uppercase tracking-widest">Terms</button>
+                <button onclick="window.open('privacy.html', '_blank')"
+                    class="hover:text-white transition uppercase tracking-widest">Privacy</button>
             </div>
             <p class="text-[10px] text-neutral-600 uppercase tracking-widest">© 2026 ECHOLOGUE. All rights reserved.</p>
         </div>
@@ -245,82 +322,153 @@
 
     <!-- MODALS -->
     <!-- TERMS MODAL (Keeping for reference/legacy or removing if strictly unnecessary) -->
-    <div id="termsModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-        <div class="glass-modal w-full max-w-4xl max-h-[85vh] rounded-3xl overflow-hidden flex flex-col shadow-2xl border border-white/10 animate-fade-in text-white">
+    <div id="termsModal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div
+            class="glass-modal w-full max-w-4xl max-h-[85vh] rounded-3xl overflow-hidden flex flex-col shadow-2xl border border-white/10 animate-fade-in text-white">
             <div class="p-6 border-b border-white/10 flex justify-between items-center bg-black/40">
                 <h2 class="text-xl md:text-2xl font-bold tracking-tight uppercase">Terms of Service</h2>
-                <button onclick="toggleModal('termsModal')" class="p-2 hover:bg-white/10 rounded-full transition"><i data-lucide="x" class="w-6 h-6 text-neutral-400"></i></button>
+                <button onclick="toggleModal('termsModal')" class="p-2 hover:bg-white/10 rounded-full transition"><i
+                        data-lucide="x" class="w-6 h-6 text-neutral-400"></i></button>
             </div>
-            <div class="p-6 md:p-10 overflow-y-auto modal-content-scroll text-neutral-300 space-y-6 text-xs md:text-sm leading-relaxed text-justify">
-                <p class="text-rose-400 font-bold uppercase tracking-widest text-[10px]">Effective Date: January 2026</p>
-                <p>Welcome to <strong>ECHOLOGUE</strong>. These Terms govern your access to and use of the platform. By using the Service, you agree to these Terms.</p>
+            <div
+                class="p-6 md:p-10 overflow-y-auto modal-content-scroll text-neutral-300 space-y-6 text-xs md:text-sm leading-relaxed text-justify">
+                <p class="text-rose-400 font-bold uppercase tracking-widest text-[10px]">Effective Date: January 2026
+                </p>
+                <p>Welcome to <strong>ECHOLOGUE</strong>. These Terms govern your access to and use of the platform. By
+                    using the Service, you agree to these Terms.</p>
                 <hr class="border-white/10">
-                <section><h3 class="text-white font-bold mb-2 uppercase tracking-tight">1. About ECHOLOGUE</h3><p>Experimental, AI-powered platform for sonic landscapes. Outputs algorithmically generated and not guaranteed to be permanent.</p></section>
-                <section><h3 class="text-white font-bold mb-2 uppercase tracking-tight">2. Eligibility</h3><p>At least 13 years old. Guardian permission required for minors under 18.</p></section>
-                <section><h3 class="text-white font-bold mb-2 uppercase tracking-tight">3. Accounts</h3><p>You may sign in via Google. You are responsible for account security and authentic interactions.</p></section>
-                <section><h3 class="text-white font-bold mb-2 uppercase tracking-tight">4. Content Ownership</h3><p>You retain ownership of inputs. AI outputs are yours for personal use. ECHOLOGUE does not guarantee uniqueness.</p></section>
-                <section><h3 class="text-white font-bold mb-2 uppercase tracking-tight">12. Governing Law</h3><p>Governed by the laws of India, without regard to conflict principles.</p></section>
-                <section><h3 class="text-white font-bold mb-2 uppercase tracking-tight">13. Contact</h3><p>Created by Aryan Das. Email: dasaryan715@gmail.com</p></section>
+                <section>
+                    <h3 class="text-white font-bold mb-2 uppercase tracking-tight">1. About ECHOLOGUE</h3>
+                    <p>Experimental, AI-powered platform for sonic landscapes. Outputs algorithmically generated and not
+                        guaranteed to be permanent.</p>
+                </section>
+                <section>
+                    <h3 class="text-white font-bold mb-2 uppercase tracking-tight">2. Eligibility</h3>
+                    <p>At least 13 years old. Guardian permission required for minors under 18.</p>
+                </section>
+                <section>
+                    <h3 class="text-white font-bold mb-2 uppercase tracking-tight">3. Accounts</h3>
+                    <p>You may sign in via Google. You are responsible for account security and authentic interactions.
+                    </p>
+                </section>
+                <section>
+                    <h3 class="text-white font-bold mb-2 uppercase tracking-tight">4. Content Ownership</h3>
+                    <p>You retain ownership of inputs. AI outputs are yours for personal use. ECHOLOGUE does not
+                        guarantee uniqueness.</p>
+                </section>
+                <section>
+                    <h3 class="text-white font-bold mb-2 uppercase tracking-tight">12. Governing Law</h3>
+                    <p>Governed by the laws of India, without regard to conflict principles.</p>
+                </section>
+                <section>
+                    <h3 class="text-white font-bold mb-2 uppercase tracking-tight">13. Contact</h3>
+                    <p>Created by Aryan Das. Email: dasaryan715@gmail.com</p>
+                </section>
             </div>
         </div>
     </div>
 
     <!-- PRIVACY MODAL -->
-    <div id="privacyModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-        <div class="glass-modal w-full max-w-4xl max-h-[85vh] rounded-3xl overflow-hidden flex flex-col shadow-2xl border border-white/10 animate-fade-in text-white">
+    <div id="privacyModal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div
+            class="glass-modal w-full max-w-4xl max-h-[85vh] rounded-3xl overflow-hidden flex flex-col shadow-2xl border border-white/10 animate-fade-in text-white">
             <div class="p-6 border-b border-white/10 flex justify-between items-center bg-black/40">
                 <h2 class="text-xl md:text-2xl font-bold tracking-tight uppercase">Privacy Policy</h2>
-                <button onclick="toggleModal('privacyModal')" class="p-2 hover:bg-white/10 rounded-full transition"><i data-lucide="x" class="w-6 h-6 text-neutral-400"></i></button>
+                <button onclick="toggleModal('privacyModal')" class="p-2 hover:bg-white/10 rounded-full transition"><i
+                        data-lucide="x" class="w-6 h-6 text-neutral-400"></i></button>
             </div>
-            <div class="p-6 md:p-10 overflow-y-auto modal-content-scroll text-neutral-300 space-y-6 text-xs md:text-sm leading-relaxed text-justify">
-                <p class="text-rose-400 font-bold uppercase tracking-widest text-[10px]">Effective Date: January 2026</p>
-                <p>Your privacy is paramount. This policy covers data collection for improvement and personalization.</p>
+            <div
+                class="p-6 md:p-10 overflow-y-auto modal-content-scroll text-neutral-300 space-y-6 text-xs md:text-sm leading-relaxed text-justify">
+                <p class="text-rose-400 font-bold uppercase tracking-widest text-[10px]">Effective Date: January 2026
+                </p>
+                <p>Your privacy is paramount. This policy covers data collection for improvement and personalization.
+                </p>
                 <hr class="border-white/10">
-                <section><h3 class="text-white font-bold mb-2 uppercase tracking-tight">1. Information Collect</h3><p>We collect text prompts, account credentials via Google, and technical device data to personalize performance.</p></section>
-                <section><h3 class="text-white font-bold mb-2 uppercase tracking-tight">2. Usage</h3><p>Data is used to operate and secure ECHOLOGUE and generate your sonic experience. We do NOT sell data.</p></section>
-                <section><h3 class="text-white font-bold mb-2 uppercase tracking-tight">Contact Us</h3><p>Email: dasaryan715@gmail.com</p></section>
+                <section>
+                    <h3 class="text-white font-bold mb-2 uppercase tracking-tight">1. Information Collect</h3>
+                    <p>We collect text prompts, account credentials via Google, and technical device data to personalize
+                        performance.</p>
+                </section>
+                <section>
+                    <h3 class="text-white font-bold mb-2 uppercase tracking-tight">2. Usage</h3>
+                    <p>Data is used to operate and secure ECHOLOGUE and generate your sonic experience. We do NOT sell
+                        data.</p>
+                </section>
+                <section>
+                    <h3 class="text-white font-bold mb-2 uppercase tracking-tight">Contact Us</h3>
+                    <p>Email: dasaryan715@gmail.com</p>
+                </section>
             </div>
         </div>
     </div>
 
     <!-- DEVELOPER MODAL -->
-    <div id="developerModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-        <div class="glass-modal w-full max-w-2xl max-h-[85vh] rounded-[2.5rem] overflow-hidden flex flex-col animate-fade-in shadow-2xl border border-white/10 text-white">
-            <div class="relative h-24 md:h-32 bg-gradient-to-r from-rose-500/20 via-amber-500/10 to-purple-600/20 flex items-end p-6 md:p-8">
-                <button onclick="toggleModal('developerModal')" class="absolute top-4 md:top-6 right-4 md:right-6 p-2 bg-black/20 hover:bg-black/40 rounded-full transition text-white backdrop-blur-md">
+    <div id="developerModal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div
+            class="glass-modal w-full max-w-2xl max-h-[85vh] rounded-[2.5rem] overflow-hidden flex flex-col animate-fade-in shadow-2xl border border-white/10 text-white">
+            <div
+                class="relative h-24 md:h-32 bg-gradient-to-r from-rose-500/20 via-amber-500/10 to-purple-600/20 flex items-end p-6 md:p-8">
+                <button onclick="toggleModal('developerModal')"
+                    class="absolute top-4 md:top-6 right-4 md:right-6 p-2 bg-black/20 hover:bg-black/40 rounded-full transition text-white backdrop-blur-md">
                     <i data-lucide="x" class="w-4 h-4 md:w-5 md:h-5"></i>
                 </button>
                 <div class="flex items-center gap-4 md:gap-5">
-                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-black border-2 border-white/10 shadow-xl overflow-hidden flex-shrink-0">
-                        <img src="devPhoto.png" alt="Aryan Das" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                    <div
+                        class="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-black border-2 border-white/10 shadow-xl overflow-hidden flex-shrink-0">
+                        <img src="devPhoto.png" alt="Aryan Das"
+                            class="w-full h-full object-cover transition-all duration-500">
+
                     </div>
                     <div class="min-w-0">
                         <h2 class="text-xl md:text-3xl font-black tracking-tighter uppercase truncate">Aryan DAS</h2>
-                        <p class="text-rose-400 text-[9px] md:text-sm font-bold tracking-widest uppercase mt-1 leading-tight">Student · EE · NIT Silchar</p>
+                        <p
+                            class="text-rose-400 text-[9px] md:text-sm font-bold tracking-widest uppercase mt-1 leading-tight">
+                            Student · EE · NIT Silchar</p>
                     </div>
                 </div>
             </div>
             <div class="p-6 md:p-8 overflow-y-auto modal-content-scroll space-y-6">
                 <div class="flex flex-wrap gap-2">
-                    <div class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-tighter"><i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-amber-400"></i>NIT Silchar</div>
-                    <div class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-tighter"><i data-lucide="mail" class="w-3.5 h-3.5 text-rose-400"></i>Verified</div>
+                    <div
+                        class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-tighter">
+                        <i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-amber-400"></i>NIT Silchar</div>
+                    <div
+                        class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-tighter">
+                        <i data-lucide="mail" class="w-3.5 h-3.5 text-rose-400"></i>Verified</div>
                 </div>
                 <div class="space-y-3">
-                    <h3 class="text-lg font-bold text-white flex items-center gap-2 uppercase tracking-tight"><i data-lucide="terminal" class="w-5 h-5 text-purple-400"></i>About</h3>
-                    <p class="text-neutral-400 leading-relaxed text-xs md:text-sm">I am a first-year Electrical Engineering student at <span class="text-white font-medium uppercase underline decoration-rose-500/20 underline-offset-4">NIT Silchar</span>. Currently building strong foundations in Python, C, and core engineering concepts.</p>
-                    <p class="text-neutral-400 leading-relaxed text-xs md:text-sm">Continuously studying AI, machine learning, and data science, motivated by turning daily challenges into long-term technical growth.</p>
+                    <h3 class="text-lg font-bold text-white flex items-center gap-2 uppercase tracking-tight"><i
+                            data-lucide="terminal" class="w-5 h-5 text-purple-400"></i>About</h3>
+                    <p class="text-neutral-400 leading-relaxed text-xs md:text-sm">I am a first-year Electrical
+                        Engineering student at <span
+                            class="text-white font-medium uppercase underline decoration-rose-500/20 underline-offset-4">NIT
+                            Silchar</span>. Currently building strong foundations in Python, C, and core engineering
+                        concepts.</p>
+                    <p class="text-neutral-400 leading-relaxed text-xs md:text-sm">Continuously studying AI, machine
+                        learning, and data science, motivated by turning daily challenges into long-term technical
+                        growth.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    <a href="mailto:dasaryan715@gmail.com" class="p-3 rounded-2xl bg-white/5 border border-white/10 hover:bg-rose-500/10 transition-all flex items-center gap-3 group">
-                        <div class="w-10 h-10 rounded-xl bg-black/30 flex items-center justify-center text-rose-400 group-hover:scale-110 transition-transform"><i data-lucide="mail" class="w-5 h-5"></i></div>
+                    <a href="mailto:dasaryan715@gmail.com"
+                        class="p-3 rounded-2xl bg-white/5 border border-white/10 hover:bg-rose-500/10 transition-all flex items-center gap-3 group">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-black/30 flex items-center justify-center text-rose-400 group-hover:scale-110 transition-transform">
+                            <i data-lucide="mail" class="w-5 h-5"></i></div>
                         <div class="text-left font-black uppercase text-[9px] text-white tracking-widest">Email Me</div>
                     </a>
-                    <a href="https://aryandas.codes" target="_blank" class="p-3 rounded-2xl bg-white/5 border border-white/10 hover:bg-amber-500/10 transition-all flex items-center gap-3 group">
-                        <div class="w-10 h-10 rounded-xl bg-black/30 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform"><i data-lucide="globe" class="w-5 h-5"></i></div>
+                    <a href="https://aryandas.codes" target="_blank"
+                        class="p-3 rounded-2xl bg-white/5 border border-white/10 hover:bg-amber-500/10 transition-all flex items-center gap-3 group">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-black/30 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
+                            <i data-lucide="globe" class="w-5 h-5"></i></div>
                         <div class="text-left font-black uppercase text-[9px] text-white tracking-widest">Website</div>
                     </a>
                 </div>
-                <a href="https://patreon.com/dasaryan" target="_blank" class="w-full flex items-center justify-center gap-3 px-6 py-4 rounded-2xl bg-gradient-to-r from-rose-500 to-amber-500 text-white font-black hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-rose-500/20 uppercase tracking-widest text-[10px] md:text-sm">
+                <a href="https://patreon.com/dasaryan" target="_blank"
+                    class="w-full flex items-center justify-center gap-3 px-6 py-4 rounded-2xl bg-gradient-to-r from-rose-500 to-amber-500 text-white font-black hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-rose-500/20 uppercase tracking-widest text-[10px] md:text-sm">
                     <i data-lucide="coffee" class="w-5 h-5"></i>BUY ME A COFFEE
                 </a>
             </div>
@@ -334,10 +482,10 @@
             const modal = document.getElementById(id);
             if (modal.classList.contains('hidden')) {
                 modal.classList.replace('hidden', 'flex');
-                document.body.style.overflow = 'hidden'; 
+                document.body.style.overflow = 'hidden';
             } else {
                 modal.classList.replace('flex', 'hidden');
-                document.body.style.overflow = 'auto'; 
+                document.body.style.overflow = 'auto';
             }
         }
 
@@ -361,8 +509,8 @@
         const visualizer = document.getElementById('visualizer');
         const audioStatus = document.getElementById('audioStatus');
         const muteBarPlaceholder = document.getElementById('muteBarPlaceholder');
-        
-        let isPlaying = false; 
+
+        let isPlaying = false;
         let hasInteracted = false;
 
         function updateUI(playing) {
@@ -388,7 +536,7 @@
                 updateUI(true);
                 return true;
             } catch (err) {
-                updateUI(false); 
+                updateUI(false);
                 return false;
             }
         }
@@ -422,4 +570,5 @@
         window.onload = playAudio;
     </script>
 </body>
+
 </html>
