@@ -14,7 +14,7 @@
             background: #f8fafc;
             min-height: 100vh;
             color: #334155;
-            overflow: hidden;
+            overflow-x: hidden;
             transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             flex-direction: column;
@@ -125,8 +125,37 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
+            padding: 1.5rem;
             z-index: 10;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            #main-header {
+                padding: 1.5rem !important;
+            }
+            #branding-header {
+                display: none;
+            }
+            .player-card {
+                padding: 1.5rem !important;
+                gap: 1.5rem !important;
+            }
+            .timer-svg {
+                width: 280px !important;
+                height: 280px !important;
+            }
+            #timer-display {
+                font-size: 4rem !important;
+            }
+            #theme-controls {
+                left: 1.5rem !important;
+                bottom: 1.5rem !important;
+            }
+            #headphones-reminder {
+                bottom: 6rem !important;
+                width: 80%;
+            }
         }
 
         /* Centering and orientation fix for shuffle button */
@@ -171,34 +200,33 @@
             </div>
 
             <div class="glass p-10 md:p-12 w-full player-card shadow-2xl border-white/40 flex flex-col items-center gap-10">
-                <div class="relative group">
-                    <div class="w-48 h-48 md:w-64 md:h-64 bg-slate-100 rounded-[40px] overflow-hidden shadow-2xl relative flex items-center justify-center">
-                        <div id="music-visualizer" class="absolute inset-0 bg-black/5 flex items-end justify-center gap-2 p-12 opacity-0 transition-opacity duration-500 z-10">
-                            <div class="w-2.5 bg-slate-400 h-12 animate-bounce"></div>
-                            <div class="w-2.5 bg-slate-400 h-24 animate-bounce" style="animation-delay: 0.1s"></div>
-                            <div class="w-2.5 bg-slate-400 h-16 animate-bounce" style="animation-delay: 0.2s"></div>
-                            <div class="w-2.5 bg-slate-400 h-20 animate-bounce" style="animation-delay: 0.3s"></div>
+                <div class="relative group w-full flex flex-col items-center">
+                    <div class="w-44 h-44 md:w-64 md:h-64 bg-slate-100/50 rounded-[40px] overflow-hidden shadow-2xl relative flex items-center justify-center">
+                        <div id="music-visualizer" class="absolute inset-0 bg-black/5 flex items-end justify-center gap-1.5 md:gap-2 p-10 md:p-12 opacity-0 transition-opacity duration-500 z-10">
+                            <div class="w-2 bg-slate-400 h-10 md:h-12 animate-bounce"></div>
+                            <div class="w-2 bg-slate-400 h-20 md:h-24 animate-bounce" style="animation-delay: 0.1s"></div>
+                            <div class="w-2 bg-slate-400 h-14 md:h-16 animate-bounce" style="animation-delay: 0.2s"></div>
+                            <div class="w-2 bg-slate-400 h-18 md:h-20 animate-bounce" style="animation-delay: 0.3s"></div>
                         </div>
                         
-                        <svg id="album-icon" class="w-24 h-24 opacity-5 transition-opacity duration-500" viewBox="0 0 24 24" fill="currentColor">
+                        <svg id="album-icon" class="w-16 h-16 md:w-24 md:h-24 opacity-5 transition-opacity duration-500" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
                         </svg>
                     </div>
 
-                    <button id="sync-btn" onclick="syncLocalFolder()" class="absolute -bottom-4 left-1/2 -translate-x-1/2 glass px-6 py-2 text-[8px] uppercase tracking-widest font-bold whitespace-nowrap hover:bg-white/80 transition-all shadow-lg z-20">
-                        Synchronize 'relax/' Folder
+                    <button id="sync-btn" onclick="syncLocalFolder()" class="mt-6 glass px-6 py-2.5 text-[8px] md:text-[9px] uppercase tracking-widest font-bold whitespace-nowrap hover:bg-white/80 transition-all shadow-lg z-20">
+                        Synchronize Folder
                     </button>
                 </div>
 
                 <div class="text-center space-y-3 px-4 w-full">
-                    <h4 id="song-title" class="text-2xl md:text-3xl font-light tracking-tight truncate max-w-full">Library Offline</h4>
-                    <p id="library-status" class="text-[10px] uppercase tracking-[0.5em] opacity-30 font-bold">Waiting for connection...</p>
+                    <h4 id="song-title" class="text-xl md:text-3xl font-light tracking-tight truncate max-w-full">Library Offline</h4>
+                    <p id="library-status" class="text-[9px] md:text-[10px] uppercase tracking-[0.5em] opacity-30 font-bold">Waiting for connection...</p>
                 </div>
 
-                <div class="flex items-center gap-8 md:gap-14">
-                    <!-- Shuffle Button Refinement -->
-                    <button onclick="toggleShuffle()" id="shuffle-btn" class="opacity-20 hover:opacity-100 transition-all p-3 rounded-full hover:bg-white/20">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <div class="flex items-center gap-6 md:gap-14">
+                    <button onclick="toggleShuffle()" id="shuffle-btn" class="opacity-20 hover:opacity-100 transition-all p-3 rounded-full hover:bg-white/20 hidden md:flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M16 3h5v5"></path>
                             <path d="M4 20L21 3"></path>
                             <path d="M21 16v5h-5"></path>
@@ -208,19 +236,27 @@
                     </button>
 
                     <button onclick="prevSong()" class="hover:scale-110 transition-transform opacity-60 active:scale-90">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6L19 18V6z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6L19 18V6z"/></svg>
                     </button>
 
-                    <button onclick="toggleMusic()" class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-slate-800 text-white flex items-center justify-center hover:bg-slate-950 transition-all shadow-2xl hover:scale-105 active:scale-90">
-                        <svg id="music-play" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                        <svg id="music-pause" class="hidden" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                    <button onclick="toggleMusic()" class="w-16 h-16 md:w-24 md:h-24 rounded-full bg-slate-800 text-white flex items-center justify-center hover:bg-slate-950 transition-all shadow-2xl hover:scale-105 active:scale-90">
+                        <svg id="music-play" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        <svg id="music-pause" class="hidden" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
                     </button>
 
                     <button onclick="nextSong()" class="hover:scale-110 transition-transform opacity-60 active:scale-90">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
                     </button>
 
-                    <div class="w-12"></div>
+                    <button onclick="toggleShuffle()" id="shuffle-btn-mobile" class="opacity-20 hover:opacity-100 transition-all p-3 rounded-full hover:bg-white/20 flex md:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 3h5v5"></path>
+                            <path d="M4 20L21 3"></path>
+                            <path d="M21 16v5h-5"></path>
+                            <path d="M15 15l6 6"></path>
+                            <path d="M4 4l5 5"></path>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
@@ -228,87 +264,87 @@
         <!-- FOCUS VIEW (Timer) -->
         <main id="focus-view" class="hidden-view flex-col items-center justify-center w-full max-w-5xl fade-in">
             <!-- Header for Terminate Session -->
-            <div class="w-full flex justify-end items-center mb-8 relative z-[60]">
+            <div class="w-full flex justify-end items-center mb-4 md:mb-8 relative z-[60]">
                 <button onclick="exitFocusMode()" class="opacity-40 hover:opacity-100 transition-opacity uppercase text-[9px] tracking-[0.4em] font-bold cursor-pointer">Terminate Session</button>
             </div>
 
-            <div class="relative flex items-center justify-center mb-10">
-                <svg class="w-72 h-72 md:w-[500px] md:h-[500px] transform -rotate-90">
+            <div class="relative flex items-center justify-center mb-6 md:mb-10">
+                <svg class="timer-svg w-64 h-64 md:w-[500px] md:h-[500px] transform -rotate-90">
                     <circle cx="50%" cy="50%" r="45%" stroke="rgba(255,255,255,0.04)" stroke-width="1" fill="transparent"/>
                     <circle id="progress-ring" cx="50%" cy="50%" r="45%" stroke="#94a3b8" stroke-width="4" fill="transparent" stroke-dasharray="1400" stroke-dashoffset="0" stroke-linecap="round" class="timer-circle"/>
                 </svg>
                 
                 <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                    <span id="timer-display" class="text-6xl md:text-9xl font-light tracking-tighter">00:00</span>
-                    <span id="timer-label" class="text-[9px] uppercase tracking-[0.6em] opacity-30 mt-8 font-semibold">Active Interval</span>
+                    <span id="timer-display" class="text-5xl md:text-9xl font-light tracking-tighter">00:00</span>
+                    <span id="timer-label" class="text-[8px] md:text-[9px] uppercase tracking-[0.6em] opacity-30 mt-4 md:mt-8 font-semibold">Active Interval</span>
                 </div>
             </div>
 
             <div class="flex flex-col items-center gap-10">
-                <div class="flex items-center gap-12 relative z-[60]">
-                    <!-- Restart Button stays active -->
+                <div class="flex items-center gap-8 md:gap-12 relative z-[60]">
+                    <!-- Restart Button -->
                     <button onclick="resetTimer()" class="opacity-30 hover:opacity-100 transition-opacity cursor-pointer">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
                     </button>
-                    <button onclick="toggleTimer()" id="play-btn" class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all focus:outline-none cursor-pointer">
-                        <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="#0f172a"><path d="M8 5v14l11-7z"/></svg>
-                        <svg id="pause-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="#0f172a"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                    <button onclick="toggleTimer()" id="play-btn" class="w-16 h-16 md:w-24 md:h-24 rounded-full bg-white shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all focus:outline-none cursor-pointer">
+                        <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="#0f172a"><path d="M8 5v14l11-7z"/></svg>
+                        <svg id="pause-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="#0f172a"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
                     </button>
-                    <div class="w-6"></div>
+                    <div class="w-4 md:w-6"></div>
                 </div>
             </div>
         </main>
     </div>
 
     <!-- FOCUS SETUP MODAL -->
-    <div id="focus-modal" class="fixed inset-0 z-[100] flex items-center justify-center hidden bg-black/60 backdrop-blur-3xl transition-all">
-        <div class="glass p-10 max-w-lg w-full flex flex-col items-center gap-10 shadow-2xl scale-in border-white/40">
+    <div id="focus-modal" class="fixed inset-0 z-[100] flex items-center justify-center hidden bg-black/60 backdrop-blur-3xl transition-all p-6">
+        <div class="glass p-8 md:p-10 max-w-lg w-full flex flex-col items-center gap-8 md:gap-10 shadow-2xl scale-in border-white/40">
             <div class="text-center space-y-2">
-                <h2 class="serif text-3xl italic">Session Configuration</h2>
-                <p class="text-[10px] uppercase tracking-widest opacity-40">Define your focus interval</p>
+                <h2 class="serif text-2xl md:text-3xl italic">Session Configuration</h2>
+                <p class="text-[9px] md:text-[10px] uppercase tracking-widest opacity-40">Define your focus interval</p>
             </div>
             
-            <div class="flex gap-6 items-center">
+            <div class="flex gap-4 md:gap-6 items-center">
                 <div class="flex flex-col items-center gap-2">
-                    <input type="number" id="focus-h" placeholder="00" min="0" max="23" class="w-16 md:w-20 h-16 md:h-20 text-3xl md:text-4xl text-center bg-transparent border-b border-slate-300 focus:outline-none focus:border-slate-800 transition-colors font-light">
-                    <span class="text-[9px] uppercase tracking-widest opacity-40 font-bold">Hours</span>
+                    <input type="number" id="focus-h" placeholder="00" min="0" max="23" class="w-12 md:w-20 h-12 md:h-20 text-2xl md:text-4xl text-center bg-transparent border-b border-slate-300 focus:outline-none focus:border-slate-800 transition-colors font-light">
+                    <span class="text-[8px] md:text-[9px] uppercase tracking-widest opacity-40 font-bold">Hours</span>
                 </div>
-                <span class="text-3xl opacity-20 mb-6">:</span>
+                <span class="text-2xl md:text-3xl opacity-20 mb-4 md:mb-6">:</span>
                 <div class="flex flex-col items-center gap-2">
-                    <input type="number" id="focus-m" placeholder="25" min="0" max="59" class="w-16 md:w-20 h-16 md:h-20 text-3xl md:text-4xl text-center bg-transparent border-b border-slate-300 focus:outline-none focus:border-slate-800 transition-colors font-light">
-                    <span class="text-[9px] uppercase tracking-widest opacity-40 font-bold">Mins</span>
+                    <input type="number" id="focus-m" placeholder="25" min="0" max="59" class="w-12 md:w-20 h-12 md:h-20 text-2xl md:text-4xl text-center bg-transparent border-b border-slate-300 focus:outline-none focus:border-slate-800 transition-colors font-light">
+                    <span class="text-[8px] md:text-[9px] uppercase tracking-widest opacity-40 font-bold">Mins</span>
                 </div>
-                <span class="text-3xl opacity-20 mb-6">:</span>
+                <span class="text-2xl md:text-3xl opacity-20 mb-4 md:mb-6">:</span>
                 <div class="flex flex-col items-center gap-2">
-                    <input type="number" id="focus-s" placeholder="00" min="0" max="59" class="w-16 md:w-20 h-16 md:h-20 text-3xl md:text-4xl text-center bg-transparent border-b border-slate-300 focus:outline-none focus:border-slate-800 transition-colors font-light">
-                    <span class="text-[9px] uppercase tracking-widest opacity-40 font-bold">Secs</span>
+                    <input type="number" id="focus-s" placeholder="00" min="0" max="59" class="w-12 md:w-20 h-12 md:h-20 text-2xl md:text-4xl text-center bg-transparent border-b border-slate-300 focus:outline-none focus:border-slate-800 transition-colors font-light">
+                    <span class="text-[8px] md:text-[9px] uppercase tracking-widest opacity-40 font-bold">Secs</span>
                 </div>
             </div>
 
-            <div class="flex gap-4 w-full">
-                <button onclick="closeFocusSetup()" class="flex-1 px-8 py-4 rounded-full border border-slate-300 opacity-60 hover:opacity-100 hover:bg-white/20 transition-all uppercase text-[9px] tracking-widest font-bold">Dismiss</button>
-                <button onclick="startCustomFocus()" class="flex-1 bg-slate-800 text-white px-8 py-4 rounded-full hover:bg-slate-950 hover:shadow-lg transition-all uppercase text-[9px] tracking-widest font-bold">Initiate Session</button>
+            <div class="flex flex-col md:flex-row gap-4 w-full">
+                <button onclick="closeFocusSetup()" class="order-2 md:order-1 flex-1 px-8 py-3.5 rounded-full border border-slate-300 opacity-60 hover:opacity-100 hover:bg-white/20 transition-all uppercase text-[9px] tracking-widest font-bold">Dismiss</button>
+                <button onclick="startCustomFocus()" class="order-1 md:order-2 flex-1 bg-slate-800 text-white px-8 py-3.5 rounded-full hover:bg-slate-950 hover:shadow-lg transition-all uppercase text-[9px] tracking-widest font-bold">Initiate Session</button>
             </div>
         </div>
     </div>
 
     <!-- Theme Selection -->
     <div id="theme-controls" class="fixed bottom-10 left-10 z-50 transition-all duration-700">
-        <div id="theme-menu" class="theme-dropdown absolute bottom-full left-0 mb-4 w-48 glass p-2 shadow-2xl overflow-hidden">
-            <button onclick="setTheme('default')" class="w-full text-left px-4 py-3 text-[10px] uppercase tracking-widest hover:bg-white/20 rounded-xl transition-colors font-semibold">Fireplace</button>
-            <button onclick="setTheme('rain')" class="w-full text-left px-4 py-3 text-[10px] uppercase tracking-widest hover:bg-white/20 rounded-xl transition-colors font-semibold">Rainy Window</button>
-            <button onclick="setTheme('forest')" class="w-full text-left px-4 py-3 text-[10px] uppercase tracking-widest hover:bg-white/20 rounded-xl transition-colors font-semibold">Quiet Forest</button>
-            <button onclick="setTheme('library')" class="w-full text-left px-4 py-3 text-[10px] uppercase tracking-widest hover:bg-white/20 rounded-xl transition-colors font-semibold">Old Library</button>
+        <div id="theme-menu" class="theme-dropdown absolute bottom-full left-0 mb-4 w-44 md:w-48 glass p-2 shadow-2xl overflow-hidden">
+            <button onclick="setTheme('default')" class="w-full text-left px-4 py-2.5 text-[9px] md:text-[10px] uppercase tracking-widest hover:bg-white/20 rounded-xl transition-colors font-semibold">fireplace</button>
+            <button onclick="setTheme('rain')" class="w-full text-left px-4 py-2.5 text-[9px] md:text-[10px] uppercase tracking-widest hover:bg-white/20 rounded-xl transition-colors font-semibold">Rainy Window</button>
+            <button onclick="setTheme('forest')" class="w-full text-left px-4 py-2.5 text-[9px] md:text-[10px] uppercase tracking-widest hover:bg-white/20 rounded-xl transition-colors font-semibold">Quiet Forest</button>
+            <button onclick="setTheme('library')" class="w-full text-left px-4 py-2.5 text-[9px] md:text-[10px] uppercase tracking-widest hover:bg-white/20 rounded-xl transition-colors font-semibold">Old Library</button>
         </div>
-        <button onclick="toggleThemeMenu()" class="glass px-6 py-3 text-[9px] uppercase tracking-[0.3em] font-bold hover:bg-white/60 transition-all shadow-md flex items-center gap-3">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="M20 12h2"/><path d="m19.07 19.07-1.41-1.41"/><path d="M12 22v2"/><path d="m6.34 17.66-1.41 1.41"/><path d="M2 12h2"/><path d="m7.76 7.76-1.41-1.41"/><circle cx="12" cy="12" r="4"/></svg>
+        <button onclick="toggleThemeMenu()" class="glass px-5 md:px-6 py-3 text-[8px] md:text-[9px] uppercase tracking-[0.3em] font-bold hover:bg-white/60 transition-all shadow-md flex items-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="M20 12h2"/><path d="m19.07 19.07-1.41-1.41"/><path d="M12 22v2"/><path d="m6.34 17.66-1.41 1.41"/><path d="M2 12h2"/><path d="m7.76 7.76-1.41-1.41"/><circle cx="12" cy="12" r="4"/></svg>
             Scene
         </button>
     </div>
 
     <!-- Headphones Reminder -->
     <div id="headphones-reminder" class="fixed bottom-10 left-1/2 -translate-x-1/2 z-40 pointer-events-none transition-all duration-700">
-        <div class="text-[9px] uppercase tracking-[0.5em] opacity-30 font-medium text-center">
+        <div class="text-[8px] md:text-[9px] uppercase tracking-[0.4em] md:tracking-[0.5em] opacity-30 font-medium text-center">
             Use headphones for an immersive experience
         </div>
     </div>
@@ -426,13 +462,14 @@
         function toggleShuffle() {
             isShuffle = !isShuffle;
             const btn = document.getElementById('shuffle-btn');
+            const btnMob = document.getElementById('shuffle-btn-mobile');
             if (isShuffle) {
-                btn.classList.add('opacity-100', 'bg-white/20');
-                btn.classList.remove('opacity-20');
+                btn.classList.add('opacity-100', 'bg-white/20'); btn.classList.remove('opacity-20');
+                btnMob.classList.add('opacity-100', 'bg-white/20'); btnMob.classList.remove('opacity-20');
                 showNotification("Shuffle: On");
             } else {
-                btn.classList.remove('opacity-100', 'bg-white/20');
-                btn.classList.add('opacity-20');
+                btn.classList.remove('opacity-100', 'bg-white/20'); btn.classList.add('opacity-20');
+                btnMob.classList.remove('opacity-100', 'bg-white/20'); btnMob.classList.add('opacity-20');
                 showNotification("Shuffle: Off");
             }
         }
@@ -538,5 +575,4 @@
         updateDisplay();
     </script>
 </body>
-
 </html>
